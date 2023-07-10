@@ -1,9 +1,11 @@
+/* 초기화 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* 카드 중앙에 위치하기 위함 */
 body {
   width: 100%;
   min-height: 100vh;
@@ -17,33 +19,38 @@ body {
   width: 200px;
   height: 300px;
   background-color: #ed4848;
-  position: relative;
+  position: relative; /* 카드 영역 안 아이콘 위치 조정 위해 position 설정 */
   cursor: pointer;
-  transition: all 0.5s;
+  transition: all 0.5s; /* 자연스럽게 변화하기 위한 값 */
 }
 
 .card:hover {
   box-shadow: inset 0 0 0 100px rgba(255, 190, 0, 0.7);
+  /* inset을 하므로써 쉐도 효과가 카드 영역 안에서 표시되게 됨 */
 }
 
 .card i {
-  position: absolute;
+  position: absolute; /* 카드 영역 안 아이콘 위치 조정 위해 position 설정 */
   left: 50%;
   top: 50%;
-  margin-left: -54px;
+  margin-left: -54px; /* 중앙에 위치하기 위함- 기본 값과 매칭하기 위해 top, left를 쓰고 -로 표기 */
   margin-top: -48px;
   color: #fff;
-  transition: all 0.5s;
+  transition: all 0.5s; /* 자연스럽게 변화하기 위한 값 */
 }
 
 .card i:nth-of-type(1) {
-  transform: scale(0);
+  transform: scale(0); /* 두 번째 아이콘이 처음에 보이지 않게 하기 위한 조치 */
 }
 
 .card:hover i:nth-of-type(1) {
-  transform: scale(1);
+  transform: scale(
+    1
+  ); /* 두 번째 아이콘이 hover 됐을 때 보이도록 하기 위한 조치 */
 }
 
 .card:hover i:nth-of-type(2) {
-  transform: scale(0);
+  transform: scale(
+    0
+  ); /* hover 됐을 때 첫 번째 아이콘이 숨겨지도록 하기 위한 조치 */
 }
